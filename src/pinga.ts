@@ -1,17 +1,17 @@
-export interface LinkPingConfig {
+export interface PingAConfig {
     hrefToQuery?: boolean;
     onlyExternal?: boolean;
 }
 
-export class LinkPing {
-    config?: LinkPingConfig;
+export class PingA {
+    config?: PingAConfig;
     urls: string[];
 
     constructor(url: string);
     constructor(urls: string[]);
-    constructor(url: string, config?: LinkPingConfig);
-    constructor(urls: string[], config?: LinkPingConfig);
-    constructor(urls: string | string[], config?: LinkPingConfig) {
+    constructor(url: string, config?: PingAConfig);
+    constructor(urls: string[], config?: PingAConfig);
+    constructor(urls: string | string[], config?: PingAConfig) {
         if (urls instanceof Array) {
             this.urls = urls;
         } else {

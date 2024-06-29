@@ -1,13 +1,13 @@
 {
-    "name": "linkping",
+    "name": "pinga",
     "private": false,
     "version": "0.1.2",
-    "main": "./dist/linkping.cjs",
-    "module": "./dist/linkping.mjs",
+    "main": "./dist/pinga.cjs",
+    "module": "./dist/pinga.mjs",
     "exports": {
         ".": {
-            "require": "./dist/linkping.cjs",
-            "import": "./dist/linkping.mjs"
+            "require": "./dist/pinga.cjs",
+            "import": "./dist/pinga.mjs"
         },
         "./dist/": {
             "import": "./dist/",

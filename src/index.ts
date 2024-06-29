@@ -1,1 +1,1 @@
-export { LinkPing } from "./linkping";
+export { PingA } from "./pinga";

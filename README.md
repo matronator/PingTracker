@@ -1,6 +1,6 @@
-# LinkPing
+# PingA
 
-LinkPing is a tiny library that adds `ping` attribute to all `<a>` tags on the site with customizable list of URLs.
+PingA is a tiny library that adds `ping` attribute to all `<a>` tags on the site with customizable list of URLs.
 
 ## Features
 
