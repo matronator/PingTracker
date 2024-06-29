@@ -14,5 +14,5 @@ PingA is a tiny library that adds `ping` attribute to all `<a>` tags on the site
 ### Installation
 
 ```
-npm i linkping
+npm i @matronator/pinga
 ```
