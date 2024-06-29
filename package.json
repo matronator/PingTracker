@@ -1,5 +1,5 @@
 {
-    "name": "pinga",
+    "name": "@matronator/pinga",
     "private": false,
     "version": "0.1.3",
     "main": "./dist/pinga.cjs",
