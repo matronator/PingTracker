@@ -1,0 +1,52 @@
+{
+    "name": "linkping",
+    "private": true,
+    "version": "0.1.0",
+    "main": "./dist/linkping.cjs",
+    "module": "./dist/linkping.mjs",
+    "exports": {
+        ".": {
+            "require": "./dist/linkping.cjs",
+            "import": "./dist/linkping.mjs"
+        },
+        "./dist/": {
+            "import": "./dist/",
+            "require": "./dist/"
+        }
+    },
+    "author": {
+        "name": "Matronator",
+        "email": "info@matronator.cz",
+        "url": "https://matronator.cz"
+    },
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "dev": "vite --host",
+        "build": "rm -rf build/**/* && tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts && cp ./package.json build",
+        "test": "vitest",
+        "test:coverage": "vitest --coverage",
+        "lint": "eslint . --ext .ts",
+        "format": "prettier . --write",
+        "prepare": "husky install && husky set .husky/pre-commit 'npx lint-staged' && git add .husky/pre-commit",
+        "uninstall-husky": "npm uninstall husky --no-save && git config --unset core.hooksPath && npx rm -rf .husky"
+    },
+    "devDependencies": {
+        "@types/jsdom": "^21.1.6",
+        "@types/node": "^20.11.5",
+        "@typescript-eslint/eslint-plugin": "^6.19.1",
+        "@typescript-eslint/parser": "^6.19.1",
+        "@vitest/coverage-v8": "^1.2.1",
+        "dts-bundle-generator": "^9.2.4",
+        "eslint": "^8.56.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.1.3",
+        "husky": "^8.0.3",
+        "jsdom": "^24.1.0",
+        "lint-staged": "^15.2.0",
+        "prettier": "^3.2.4",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.3.3",
+        "vite": "^5.0.12",
+        "vitest": "^1.2.1"
+    }
+}
