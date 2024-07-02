@@ -13,11 +13,11 @@ Ping Tracker is a tiny library that adds `ping` attribute to all `<a>` tags on t
 
 ## Features
 
-- 🏓 Add `ping` attribute to all `<a>` tags automatically
-- 👀 Watch for changes using `MutationObserver` to modify newly added links
-- 📝 Customize the content of the `ping` tag (list of URLs)
-- ⚡️ Tiny library
-- 🔥 Written in TypeScript
+-   🏓 Add `ping` attribute to all `<a>` tags automatically
+-   👀 Watch for changes using `MutationObserver` to modify newly added links
+-   📝 Customize the content of the `ping` tag (list of URLs)
+-   ⚡️ Tiny library
+-   🔥 Written in TypeScript
 
 ## Installation
 
@@ -28,13 +28,13 @@ npm i ping-tracker
 ## Usage
 
 ```js
-import { PingTracker } from 'ping-tracker';
+import { PingTracker } from "ping-tracker";
 
-const pt = new PingTracker('https://analytics.example.com');
+const pt = new PingTracker("https://analytics.example.com");
 
 // Or with options
 
-const pt = new PingTracker('https://analytics.example.com', {
+const pt = new PingTracker("https://analytics.example.com", {
     hrefToQuery: false,
     onlyExternal: false,
     watchDOM: true,
