@@ -1,7 +1,7 @@
 {
     "name": "ping-tracker",
     "private": false,
-    "version": "0.0.1",
+    "version": "0.1.0",
     "main": "./dist/ping-tracker.cjs",
     "module": "./dist/ping-tracker.mjs",
     "exports": {
