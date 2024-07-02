@@ -1,6 +1,6 @@
-# PingA
+# Ping Tracker
 
-PingA is a tiny library that adds `ping` attribute to all `<a>` tags on the site with customizable list of URLs.
+Ping Tracker is a tiny library that adds `ping` attribute to all `<a>` tags on the site with customizable list of URLs.
 
 ## Features
 
@@ -14,5 +14,5 @@ PingA is a tiny library that adds `ping` attribute to all `<a>` tags on the site
 ### Installation
 
 ```
-npm i linkping
+npm i ping-tracker
 ```

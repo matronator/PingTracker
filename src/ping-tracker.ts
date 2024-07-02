@@ -1,17 +1,19 @@
-export interface PingAConfig {
+// Add sendBeacon fallback
+
+export interface PingTrackerConfig {
     hrefToQuery?: boolean;
     onlyExternal?: boolean;
 }
 
-export class PingA {
-    config?: PingAConfig;
+export class PingTracker {
+    config?: PingTrackerConfig;
     urls: string[];
 
     constructor(url: string);
     constructor(urls: string[]);
-    constructor(url: string, config?: PingAConfig);
-    constructor(urls: string[], config?: PingAConfig);
-    constructor(urls: string | string[], config?: PingAConfig) {
+    constructor(url: string, config?: PingTrackerConfig);
+    constructor(urls: string[], config?: PingTrackerConfig);
+    constructor(urls: string | string[], config?: PingTrackerConfig) {
         if (urls instanceof Array) {
             this.urls = urls;
         } else {

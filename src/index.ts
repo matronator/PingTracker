@@ -1,1 +1,1 @@
-export { PingA } from "./pinga";
+export { PingTracker } from "./ping-tracker";

@@ -1,13 +1,13 @@
 {
-    "name": "@matronator/pinga",
+    "name": "ping-tracker",
     "private": false,
-    "version": "0.1.4",
-    "main": "./dist/pinga.cjs",
-    "module": "./dist/pinga.mjs",
+    "version": "0.0.1",
+    "main": "./dist/ping-tracker.cjs",
+    "module": "./dist/ping-tracker.mjs",
     "exports": {
         ".": {
-            "require": "./dist/pinga.cjs",
-            "import": "./dist/pinga.mjs"
+            "require": "./dist/ping-tracker.cjs",
+            "import": "./dist/ping-tracker.mjs"
         },
         "./dist/": {
             "import": "./dist/",
