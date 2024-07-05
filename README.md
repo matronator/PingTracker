@@ -6,7 +6,7 @@
 ![License](https://img.shields.io/github/license/matronator/PingTracker.svg)
 ![Commits](https://badgen.net/github/commits/matronator/PingTracker)
 ![Issues](https://img.shields.io/github/issues/matronator/PingTracker.svg)
-![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=default&logo=typescript&logoColor=white)
+![npm TypeScript version](https://img.shields.io/npm/dependency-version/ping-tracker/dev/typescript)
 <a href="https://github.com/matronator">![Follow](https://img.shields.io/github/followers/matronator.svg?style=social&label=Follow&maxAge=2592000)</a>
 <a href="https://github.com/sponsors/matronator/">![GitHub Sponsors](https://img.shields.io/github/sponsors/matronator)</a>
 
