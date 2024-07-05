@@ -2,7 +2,7 @@
 
 ![Ping Tracker logo](.github/ping-tracker.png)
 
-![Version](https://badgen.net/npm/v/ping-tracker)
+![npm version](https://img.shields.io/npm/v/ping-tracker)
 ![License](https://img.shields.io/github/license/matronator/PingTracker.svg)
 ![Commits](https://badgen.net/github/commits/matronator/PingTracker)
 ![Issues](https://img.shields.io/github/issues/matronator/PingTracker.svg)
