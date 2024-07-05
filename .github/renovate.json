@@ -1,12 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
+    "config:best-practices",
     ":pinOnlyDevDependencies",
     ":ignoreModulesAndTests",
     ":preserveSemverRanges",
     "group:all",
-    "schedule:monthly",
+    "schedule:weekly",
     ":maintainLockFilesMonthly"
   ],
   "labels": ["dependencies", "renovate"],
