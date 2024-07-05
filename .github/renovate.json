@@ -19,5 +19,6 @@
   "separateMajorMinor": false,
   "autoApprove": true,
   "automerge": true,
-  "pruneBranchAfterAutomerge": true
+  "pruneBranchAfterAutomerge": true,
+  "automergeType": "branch"
 }
