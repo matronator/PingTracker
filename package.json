@@ -22,7 +22,7 @@
     "types": "./dist/index.d.ts",
     "scripts": {
         "dev": "vite --host",
-        "build": "rm -rf build/**/* && tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts && cp ./package.json build",
+        "build": "rm -rf build/**/* && tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts && cp ./package.json build && cp LICENSE.md build && cp README.md build && cp CHANGELOG.md build",
         "test": "vitest",
         "test:coverage": "vitest --coverage",
         "lint": "eslint . --ext .ts",
