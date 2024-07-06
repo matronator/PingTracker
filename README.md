@@ -1,12 +1,15 @@
 # Ping Tracker
 
-![Ping Tracker logo](.github/ping-tracker.png)
+![Ping Tracker logo](https://raw.githubusercontent.com/matronator/PingTracker/main/.github/ping-tracker.png)
 
 ![npm version](https://img.shields.io/npm/v/ping-tracker)
-![License](https://img.shields.io/github/license/matronator/PingTracker.svg)
+![npm TypeScript version](https://img.shields.io/npm/dependency-version/ping-tracker/dev/typescript)
+![Tree shaking](https://badgen.net/bundlephobia/tree-shaking/ping-tracker)
+![Dependencies](https://badgen.net/bundlephobia/dependency-count/ping-tracker)
+![Gzipped](https://badgen.net/bundlephobia/minzip/ping-tracker)
 ![Commits](https://badgen.net/github/commits/matronator/PingTracker)
 ![Issues](https://img.shields.io/github/issues/matronator/PingTracker.svg)
-![npm TypeScript version](https://img.shields.io/npm/dependency-version/ping-tracker/dev/typescript)
+![License](https://img.shields.io/github/license/matronator/PingTracker.svg)
 <a href="https://github.com/matronator">![Follow](https://img.shields.io/github/followers/matronator.svg?style=social&label=Follow&maxAge=2592000)</a>
 <a href="https://github.com/sponsors/matronator/">![GitHub Sponsors](https://img.shields.io/github/sponsors/matronator)</a>
 
@@ -17,7 +20,9 @@ Ping Tracker is a tiny library that adds `ping` attribute to all `<a>` tags on t
 -   🏓 Add `ping` attribute to all `<a>` tags automatically
 -   👀 Watch for changes using `MutationObserver` to modify newly added links
 -   📝 Customize the content of the `ping` tag (list of URLs)
--   ⚡️ Tiny library
+-   ⚡️ Tiny library (**1kB** gzipped, **2.2kB** minified)
+-   📭 No dependencies
+-   🌳 Tree-shakeable
 -   🔥 Written in TypeScript
 
 ## Installation
