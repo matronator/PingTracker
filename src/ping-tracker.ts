@@ -1,11 +1,12 @@
-// Add sendBeacon fallback
+// TODO: Add some workaround to detect link visits from contextmenu.
 
 /**
  * @interface PingTrackerConfig
- * @field {boolean} hrefToQuery If `true` appends the url inside the link's href to the ping's URL query (ie.: `?href=https://example.com`)
- * @field {boolean} onlyExternal If `true` only external links will be modified (defaults to `false`)
- * @field {Element | Element[] | Node | Node[] | NodeList | NodeListOf<Element|HTMLElement>} elementsToWatch Element or elements to watch for changes (defaults to `document.body`)
- * @field {boolean} watchDOM Watch DOM changes to modify newly created <a> tags (defaults to `true`)
+ * @member {boolean} hrefToQuery — If `true` appends the url inside the link's href to the ping's URL query (ie.: `?href=https://example.com`)
+ * @member {boolean} onlyExternal — If `true` only external links will be modified (defaults to `false`)
+ * @member {Element | Element[] | Node | Node[] | NodeList | NodeListOf<Element|HTMLElement>} elementsToWatch — Element or elements to watch for changes (defaults to `document.body`)
+ * @member {boolean} watchDOM — Watch DOM changes to modify newly created <a> tags (defaults to `true`)
+ * @member {boolean} sendBeaconInstead — If `true`, Ping Tracker won't add `ping` attribute to links, but use `sendBeacon` on click event instead (defaults to `false`). Note that this method doesn't work for opening links via the `contextmenu`.
  */
 export interface PingTrackerConfig {
     /** If `true` appends the url inside the link's href to the ping's URL query (ie.: `?href=https://example.com`) */
@@ -16,6 +17,8 @@ export interface PingTrackerConfig {
     watchDOM?: boolean;
     /** Element or elements to watch for changes (defaults to `document.body`) */
     elementsToWatch?: HTMLElement | HTMLElement[] | Node | Node[] | NodeList | NodeListOf<HTMLElement>;
+    /** If `true`, Ping Tracker won't add `ping` attribute to links, but use `sendBeacon` on click event instead (defaults to `false`). Note that this method doesn't work for opening links via the `contextmenu`. */
+    sendBeaconInstead?: boolean;
 }
 
 export class PingTracker {
@@ -25,6 +28,7 @@ export class PingTracker {
     #watchDOM: boolean = true;
     #onlyExternal: boolean = false;
     #hrefToQuery: boolean = false;
+    #sendBeaconInstead: boolean = false;
     #observer?: MutationObserver;
 
     constructor(url: string);
@@ -47,6 +51,14 @@ export class PingTracker {
         });
     }
 
+    modifyLink(link: HTMLAnchorElement) {
+        if (this.#sendBeaconInstead) {
+            this.addBeaconToLink(link);
+        } else {
+            this.addPingToLink(link);
+        }
+    }
+
     addPingToAllLinks() {
         const links = document.querySelectorAll(`a`);
         if (!links) return;
@@ -56,7 +68,7 @@ export class PingTracker {
 
     addPingToLinks(links: NodeListOf<HTMLAnchorElement> | HTMLAnchorElement[]) {
         links.forEach(el => {
-            this.addPingToLink(el);
+            this.modifyLink(el);
         });
     }
 
@@ -64,6 +76,7 @@ export class PingTracker {
         if (link.hasAttribute("ping")) return;
 
         const href = link.getAttribute("href");
+        if (!href) return;
 
         if (this.#onlyExternal) {
             if (href) {
@@ -73,6 +86,37 @@ export class PingTracker {
             }
         }
 
+        const urls: string[] = this.#appendHrefToUrls(href);
+
+        link.setAttribute("ping", urls.join(""));
+    }
+
+    addBeaconToLink(link: HTMLAnchorElement) {
+        const href = link.getAttribute("href");
+        if (!href) return;
+
+        if (this.#onlyExternal) {
+            if (!this.isExternal(href)) {
+                return;
+            }
+        }
+
+        ['click', 'auxclick'].forEach(event => {
+            link.addEventListener(event, () => {
+                const urls: string[] = this.#appendHrefToUrls(href);
+    
+                urls.forEach(url => {
+                    navigator.sendBeacon(url);
+                });
+            });
+        });
+    }
+
+    isExternal(url: string) {
+        return new URL(url).origin !== location.origin;
+    }
+
+    #appendHrefToUrls(href: string) {
         const urls: string[] = this.urls;
         if (this.#hrefToQuery) {
             urls.forEach(url => {
@@ -83,33 +127,20 @@ export class PingTracker {
                 return (url += `?href=${href}`);
             });
         }
-
-        link.setAttribute("ping", urls.join(""));
-    }
-
-    isExternal(url: string) {
-        return new URL(url).origin !== location.origin;
+        return urls;
     }
 
     #setConfigDefaults() {
         if (this.config === undefined) return;
-
-        if (this.config.watchDOM === undefined) {
-            this.#watchDOM = true;
-        } else {
-            this.#watchDOM = this.config.watchDOM;
-        }
-
-        if (this.#watchDOM) {
-            if (this.config.elementsToWatch === undefined) {
-                this.#watchedElements = document.body;
-            } else {
-                this.#watchedElements = this.config.elementsToWatch;
-            }
-        }
-
+        
         this.#onlyExternal = !!this.config.onlyExternal;
         this.#hrefToQuery = !!this.config.hrefToQuery;
+        this.#sendBeaconInstead = !!this.config.sendBeaconInstead;
+        this.#watchDOM = !!this.config.watchDOM;
+        
+        if (this.#watchDOM) {
+            this.#watchedElements = this.config.elementsToWatch ?? document.body;
+        }
     }
 
     #watchDOMChanges() {
@@ -127,7 +158,7 @@ export class PingTracker {
                         if (mutation.type === "childList") {
                             mutation.addedNodes.forEach(node => {
                                 if (node.nodeName.toLowerCase() === "a" && node instanceof HTMLElement) {
-                                    this.addPingToLink(node as HTMLAnchorElement);
+                                    this.modifyLink(node as HTMLAnchorElement);
                                 }
                             });
                         }

@@ -25,6 +25,11 @@ const formats = Object.keys(fileName) as Array<keyof typeof fileName>;
 
 module.exports = defineConfig({
     base: "./",
+    esbuild: {
+        keepNames: true,
+        minifyIdentifiers: false,
+        treeShaking: true,
+    },
     build: {
         outDir: "./dist",
         lib: {
@@ -33,6 +38,7 @@ module.exports = defineConfig({
             formats,
             fileName: format => fileName[format],
         },
+        minify: 'esbuild',
     },
     test: {
         globals: true,

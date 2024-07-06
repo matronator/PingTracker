@@ -9,5 +9,6 @@ favicon.ico
 vite.config.js
 dts-bundle-generator.config.json
 tsconfig.json
-bun.lockb
 index.html
+.vscode
+.github
