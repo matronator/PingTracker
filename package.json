@@ -1,7 +1,7 @@
 {
     "name": "ping-tracker",
     "private": false,
-    "version": "0.2.3",
+    "version": "0.3.0",
     "description": "A simple and lightweight library for adding tracking to anchor elements (links).",
     "license": "MIT",
     "main": "./dist/ping-tracker.cjs",
@@ -54,7 +54,16 @@
             "url": "https://ko-fi.com/matronator"
         }
     ],
-    "keywords": ["link", "links", "anchor", "a tags", "a href", "href", "tracking", "analytics"],
+    "keywords": [
+        "link",
+        "links",
+        "anchor",
+        "a tags",
+        "a href",
+        "href",
+        "tracking",
+        "analytics"
+    ],
     "types": "./dist/index.d.ts",
     "scripts": {
         "dev": "vite --host",
