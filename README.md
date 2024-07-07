@@ -2,14 +2,16 @@
 
 ![Ping Tracker logo](https://raw.githubusercontent.com/matronator/PingTracker/main/.github/ping-tracker.png)
 
-![npm version](https://img.shields.io/npm/v/ping-tracker)
+![NPM Version](https://img.shields.io/npm/v/ping-tracker)
+![NPM Downloads](https://img.shields.io/npm/dw/ping-tracker)
 ![npm TypeScript version](https://img.shields.io/npm/dependency-version/ping-tracker/dev/typescript)
 ![Tree shaking](https://badgen.net/bundlephobia/tree-shaking/ping-tracker)
 ![Dependencies](https://badgen.net/bundlephobia/dependency-count/ping-tracker)
-![Gzipped](https://badgen.net/bundlephobia/minzip/ping-tracker)
+![npm package minimized gzipped size](https://img.shields.io/bundlejs/size/ping-tracker)
 ![Commits](https://badgen.net/github/commits/matronator/PingTracker)
 ![Issues](https://img.shields.io/github/issues/matronator/PingTracker.svg)
 ![License](https://img.shields.io/github/license/matronator/PingTracker.svg)
+[![CodeFactor](https://www.codefactor.io/repository/github/matronator/pingtracker/badge)](https://www.codefactor.io/repository/github/matronator/pingtracker)
 <a href="https://github.com/matronator">![Follow](https://img.shields.io/github/followers/matronator.svg?style=social&label=Follow&maxAge=2592000)</a>
 <a href="https://github.com/sponsors/matronator/">![GitHub Sponsors](https://img.shields.io/github/sponsors/matronator)</a>
 
