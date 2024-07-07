@@ -20,7 +20,7 @@ Ping Tracker is a tiny library that adds `ping` attribute to all `<a>` tags on t
 -   🏓 Add `ping` attribute to all `<a>` tags automatically
 -   👀 Watch for changes using `MutationObserver` to modify newly added links
 -   📝 Customize the content of the `ping` tag (list of URLs)
--   ⚡️ Tiny library (**2.7kB** minified, **1.2kB** gzipped)
+-   ⚡️ Tiny library (**2.5kB** minified, **1.1kB** gzipped)
 -   📭 No dependencies
 -   🌳 Tree-shakeable
 -   🔥 Written in TypeScript
