@@ -1,4 +1,7 @@
-// TODO: Add some workaround to detect link visits from contextmenu.
+// TODO: Add some workaround to detect link visits from contextmenu (visibilitychange)
+// TODO: Fix bundle generation to have proper intellisesne.
+// https://stackoverflow.com/questions/78478711/jsdoc-intellisense-when-using-script-tags
+// https://stackoverflow.com/questions/75236041/vite-use-keep-names-esbuild-flag-for-production-build
 
 /**
  * @interface PingTrackerConfig

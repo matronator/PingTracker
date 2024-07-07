@@ -23,7 +23,7 @@ const fileName = {
 
 const formats = Object.keys(fileName) as Array<keyof typeof fileName>;
 
-module.exports = defineConfig({
+export default defineConfig({
     base: "./",
     esbuild: {
         keepNames: true,
@@ -38,7 +38,11 @@ module.exports = defineConfig({
             formats,
             fileName: format => fileName[format],
         },
-        minify: 'esbuild',
+        minify: 'terser',
+        terserOptions: {
+            keep_classnames: true,
+            keep_fnames: true,
+        }
     },
     test: {
         globals: true,

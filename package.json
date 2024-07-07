@@ -1,89 +1,91 @@
 {
-    "name": "ping-tracker",
-    "private": false,
-    "version": "0.3.0",
-    "description": "A simple and lightweight library for adding tracking to anchor elements (links).",
-    "license": "MIT",
-    "main": "./dist/ping-tracker.cjs",
-    "module": "./dist/ping-tracker.mjs",
-    "exports": {
-        ".": {
-            "require": "./dist/ping-tracker.cjs",
-            "import": "./dist/ping-tracker.mjs"
-        },
-        "./dist/": {
-            "import": "./dist/",
-            "require": "./dist/"
-        }
+  "name": "ping-tracker",
+  "version": "0.3.0",
+  "author": {
+    "name": "Matronator",
+    "email": "info@matronator.cz",
+    "url": "https://matronator.cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matronator/PingTracker.git"
+  },
+  "type": "module",
+  "main": "./dist/ping-tracker.cjs",
+  "module": "./dist/ping-tracker.mjs",
+  "devDependencies": {
+    "@types/jsdom": "^21.1.6",
+    "@types/node": "^20.11.5",
+    "@vitest/coverage-v8": "^1.2.1",
+    "dts-bundle-generator": "^9.2.4",
+    "jsdom": "^24.1.0",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.4",
+    "terser": "^5.31.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "upgradeps": "^2.0.6",
+    "vite": "^5.0.12",
+    "vitest": "^1.2.1"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/ping-tracker.cjs",
+      "import": "./dist/ping-tracker.mjs"
     },
-    "author": {
-        "name": "Matronator",
-        "email": "info@matronator.cz",
-        "url": "https://matronator.cz"
-    },
-    "bugs": {
-        "url": "https://github.com/matronator/PingTracker/issues"
-    },
-    "homepage": "https://github.com/matronator/PingTracker#readme",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/matronator/PingTracker.git"
-    },
-    "sponsor": {
-        "url": "https://support.matronator.cz"
-    },
-    "funding": [
-        {
-            "type": "individual",
-            "url": "https://support.matronator.cz"
-        },
-        {
-            "type": "github",
-            "url": "https://github.com/sponsors/matronator"
-        },
-        {
-            "type": "paypal",
-            "url": "https://www.paypal.com/paypalme/matronator"
-        },
-        {
-            "type": "patreon",
-            "url": "https://www.patreon.com/bePatron?u=34136375"
-        },
-        {
-            "type": "ko-fi",
-            "url": "https://ko-fi.com/matronator"
-        }
-    ],
-    "keywords": [
-        "link",
-        "links",
-        "anchor",
-        "a tags",
-        "a href",
-        "href",
-        "tracking",
-        "analytics"
-    ],
-    "types": "./dist/index.d.ts",
-    "scripts": {
-        "dev": "vite --host",
-        "build": "rm -rf dist/* && tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
-        "test": "vitest",
-        "test:coverage": "vitest --coverage",
-        "format": "prettier . --write"
-    },
-    "devDependencies": {
-        "@types/jsdom": "^21.1.6",
-        "@types/node": "^20.11.5",
-        "@vitest/coverage-v8": "^1.2.1",
-        "dts-bundle-generator": "^9.2.4",
-        "jsdom": "^24.1.0",
-        "lint-staged": "^15.2.0",
-        "prettier": "^3.2.4",
-        "ts-node": "^10.9.2",
-        "typescript": "^5.3.3",
-        "upgradeps": "^2.0.6",
-        "vite": "^5.0.12",
-        "vitest": "^1.2.1"
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/"
     }
+  },
+  "bugs": {
+    "url": "https://github.com/matronator/PingTracker/issues"
+  },
+  "description": "A simple and lightweight library for adding tracking to anchor elements (links).",
+  "funding": [
+    {
+      "type": "individual",
+      "url": "https://support.matronator.cz"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/matronator"
+    },
+    {
+      "type": "paypal",
+      "url": "https://www.paypal.com/paypalme/matronator"
+    },
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/bePatron?u=34136375"
+    },
+    {
+      "type": "ko-fi",
+      "url": "https://ko-fi.com/matronator"
+    }
+  ],
+  "homepage": "https://github.com/matronator/PingTracker#readme",
+  "keywords": [
+    "link",
+    "links",
+    "anchor",
+    "a tags",
+    "a href",
+    "href",
+    "tracking",
+    "analytics"
+  ],
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "vite --host",
+    "build": "rm -rf dist/* && tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "format": "prettier . --write"
+  },
+  "sponsor": {
+    "url": "https://support.matronator.cz"
+  },
+  "types": "./dist/index.d.ts"
 }
