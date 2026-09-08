@@ -33,7 +33,7 @@
   "devDependencies": {
     "@types/jsdom": "^30.0.0",
     "@types/node": "^26.0.0",
-    "@vitest/coverage-v8": "^4.0.0",
+    "@vitest/coverage-v8": "^5.0.0",
     "dts-bundle-generator": "^9.2.4",
     "jsdom": "^30.0.0",
     "lint-staged": "^17.0.0",
@@ -43,7 +43,7 @@
     "typescript": "^7.0.0",
     "upgradeps": "^2.0.6",
     "vite": "^8.0.0",
-    "vitest": "^4.0.0"
+    "vitest": "^5.0.0"
   },
   "exports": {
     ".": {
